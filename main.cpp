@@ -182,7 +182,6 @@ int main()
 
     // 'select' function call example
     string str = "abcdefghijklmnopqrstuvwxyz\n";
-    string expectedResult = "bcfgh\n";
     bool bytes = true;
     bool complement = false;
     vector<Range> ranges;
