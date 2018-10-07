@@ -180,6 +180,20 @@ string select(string str, vector<Range> ranges, bool bytes, bool complement) {
 int main()
 {
 
+    // 'select' function call example
+    string str = "abcdefghijklmnopqrstuvwxyz\n";
+    string expectedResult = "bcfgh\n";
+    bool bytes = true;
+    bool complement = false;
+    vector<Range> ranges;
+    Range r1("1", "2");
+    Range r2("5", "7");
+    ranges.push_back(r1);
+    ranges.push_back(r2);
+    string actualResult = select(str, ranges, bytes, complement);
+    cout << "Example Result : " << actualResult << endl;
+
+
     // Run unit tests on my functions and print the results
     UnitTestClass unitTest;
     unitTest.Testing_select_Function();
