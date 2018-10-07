@@ -180,7 +180,9 @@ string select(string str, vector<Range> ranges, bool bytes, bool complement) {
 int main()
 {
 
-    // 'select' function call example
+    // 'select' function call example //
+
+    // prepare function input
     string str = "abcdefghijklmnopqrstuvwxyz\n";
     bool bytes = true;
     bool complement = false;
@@ -189,6 +191,8 @@ int main()
     Range r2("5", "7");
     ranges.push_back(r1);
     ranges.push_back(r2);
+
+    // call the function
     string actualResult = select(str, ranges, bytes, complement);
     cout << "Example Result : " << actualResult << endl;
 
