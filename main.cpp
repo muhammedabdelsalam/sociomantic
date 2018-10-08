@@ -93,6 +93,7 @@ int* maskCreator(vector<Range> ranges, int maskSize) {
         bool valid = isValidRange(range); //At this step we are making sure that we have valid range, otherwise the invalid range will be dropped.
         if (!valid) continue;    // drop invalid ranges and continue normally
 
+		// At this step i am sure that range contains two valid integers
         int leftRange = stoi(range.getLeft());
         int rightRange = stoi(range.getRight());
 
@@ -123,7 +124,7 @@ string selectStringByBytes(string str, vector<Range> ranges, bool complement) {
 
         //iterate over each character to decide if it will appear of not.
         for (int i = 0; i < sizeOfLine; i++) {
-            if (mask[i] == complement) continue;      //Using complement flag we will decide to should bits which is corresponding to '1' or '0' in our mask
+            if (mask[i] == complement) continue;     //complement flag will decide to ignore '1' or '0' from the generated mask
             newLineContent += line[i];
         }
         result += newLineContent;
@@ -152,7 +153,7 @@ string selectStringBySeparatedStrings(string str, vector<Range> ranges, bool com
 
         //iterate over each word to decide if it will appear of not.
         for (int i = 0; i < numberOfWords; i++) {
-            if (mask[i] == complement) continue;      //Using complement flag we will decide to should bits which is corresponding to '1' or '0' in our mask
+            if (mask[i] == complement) continue;      //complement flag will decide to ignore '1' or '0' from the generated mask
             if (!firstTime) {
                 newLineContent += " ";
             }

@@ -41,6 +41,7 @@ public:
     void select_testPoint19();
     void select_testPoint20();
     void select_testPoint21();
+    void select_testPoint22();
 
 // Each function respresents test point for maskCreator function
     void maskCreator_testPoint1();

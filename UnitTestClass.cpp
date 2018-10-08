@@ -37,6 +37,7 @@ void UnitTestClass::Testing_select_Function() {
     select_testPoint19(); // this one was given in the problem description examples
     select_testPoint20(); // this one was given in the problem description examples
     select_testPoint21(); // this one was given in the problem description examples
+    select_testPoint22(); // unsorted ranges
 }
 
 // Testing the mask generation function (maskCreator)
@@ -422,6 +423,20 @@ void UnitTestClass::select_testPoint21() {
     ranges.push_back(r2);
     string actualResult = select(str, ranges, bytes, complement);
     GetResult("select", "S21", actualResult, expectedResult);
+}
+
+void UnitTestClass::select_testPoint22() {
+    string str = "This is a longer string\nsplit over two lines\n";
+    string expectedResult = "is\nover\n";
+    bool bytes = false;
+    bool complement = true;
+    vector<Range> ranges;
+    Range r1("2", "-");
+    Range r2("0", "0");
+    ranges.push_back(r1);
+    ranges.push_back(r2);
+    string actualResult = select(str, ranges, bytes, complement);
+    GetResult("select", "S22", actualResult, expectedResult);
 }
 
 void UnitTestClass::maskCreator_testPoint1() {
